@@ -35,8 +35,8 @@ The workflow is for creating a spatial-relational database and loading the raw d
 This step is optional, the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has been derived.
 1. Open UML model and alter classes / codelists / relations
 2. Add changes to ShapeChange configuration file (if any)
-3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)
-New .XSD schema has been derived. The output of ShapeChange (.XSD) is one of the inputs for part C).
+3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
+A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).
 
 ### B) Database setup (PostgreSQL + PostGIS)
 
