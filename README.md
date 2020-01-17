@@ -36,7 +36,7 @@ This step is optional, the O&M conceptual schema is ready, the ShapeChange confi
 1. Open UML model and alter classes / codelists / relations
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)
-.XSD has been derived.
+New .XSD schema has been derived. The output of ShapeChange (.XSD) is one of the inputs for part C).
 
 ### B) Database setup (PostgreSQL + PostGIS)
 
