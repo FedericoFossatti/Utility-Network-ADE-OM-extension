@@ -33,9 +33,10 @@ The workflow is for creating a spatial-relational database and loading the raw d
 
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
 This step is optional, the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has been derived.
-- 1. Open UML model and alter classes / codelists / relations
-- 2. Add changes to ShapeChange configuration file (if any)
-- 3. 
+1. Open UML model and alter classes / codelists / relations
+2. Add changes to ShapeChange configuration file (if any)
+3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)
+.XSD has been derived.
 
 ### B) Database setup (PostgreSQL + PostGIS)
 
