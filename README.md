@@ -1,7 +1,15 @@
-# Utility Network ADE. Operation and Maintenance extension
-##Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
+# CityGML - UtilityNetwork ADE - Operation and Maintenance extension
+## Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.
+
+## Resources
+[UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
+[Ramon ter Huurne - PDEng Project](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance)
+[Giorgio Agugiaro - Database Implementation of UN ADE 0.9.2](https://github.com/gioagu/3dcitydb_utility_network_ade)
+[Giorgio Agugiaro - 3DCityDB metadata](https://github.com/gioagu/3dcitydb_metadata_module)
+[Xander den Duijn - Master's Project](https://github.com/XanderdenDuijn/CityGML-Utility-Network-ADE)
+[Isaac Boates - Master's Project](https://github.com/iboates/UtilityNetwork-ADE-3DCityDB-Manager)
 
 
 
