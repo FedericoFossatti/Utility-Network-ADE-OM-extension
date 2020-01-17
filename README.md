@@ -1,8 +1,9 @@
 # CityGML - UtilityNetwork ADE - Operation and Maintenance extension
-### Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
+Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 ## Background
 The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.
+
 
 ## Resources & Related Work
 - [Tatjana Kutzner - UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
@@ -24,6 +25,22 @@ This repository contains the following folders:
 6. FME - Contains workspaces for manipulating spatial data
 7. Python - Contains routines to interact between Excel and the databse implementation in PostgreSQL
 
+
 ## Quickstart guide
 
-...in development...
+The folders in the respository are numbered in approximate chronological order related to when they need to be used in the workflow.
+The workflow is for creating a spatial-relational database and loading the raw data into it after transforming it to comply with the O&M conceptual shcema.
+
+### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
+This step is optional, the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has been derived.
+- 1. Open UML model and alter classes / codelists / relations
+- 2. Add changes to ShapeChange configuration file (if any)
+- 3. 
+
+### B) Database setup (PostgreSQL + PostGIS)
+
+
+### C) Transformation of raw data into database encoding (Safe Sodtware FME)
+
+
+### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
