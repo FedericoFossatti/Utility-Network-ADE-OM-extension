@@ -1,0 +1,3 @@
+The only files necessary for installation are the SQL scripts.  
+The pdfs contain the entity-relationship diagram of the database, to help understand the dependencies.  
+The restart file is given to hasten the clearing of the database in case of trialing the python scripts to load dummy attributes.  
