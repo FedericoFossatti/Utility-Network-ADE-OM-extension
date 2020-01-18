@@ -32,27 +32,32 @@ The folders in the respository are numbered in approximate chronological order r
 The workflow is for creating a spatial-relational database and loading the raw data into it after transforming it to comply with the O&M conceptual shcema.
 
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
-This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.
+This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
 1. Open UML model and alter classes / codelists / relations
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
+
 A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).
+
 
 ### B) O&M Database setup (PostgreSQL + PostGIS)
 This step is mandatory.  
 1. Download and install PostgreSQL
 2. Download and install PostGIS
 3. Set up new database in PostgreSQL. Open query tool in new database and excecute:
-3.1. CREATE EXTENSION postgis;
-3.2. CREATE EXTENSION postgis_raster;
-3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+    - 3.1. CREATE EXTENSION postgis;
+    - 3.2. CREATE EXTENSION postgis_raster;
+    - 3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB
-4.1. Edit the .BAT file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.
-4.2. Run .BAT and when prompter enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed. 
+    - 4.1. Edit the .BAT file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.
+    - 4.2. Run .BAT and when prompter enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed. 
 5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).
-5.1. Edit the .BAT file: 'CREATE_DB.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.
-5.2. Run bat file. Metadata module installed.
+    - 5.1. Edit the .BAT file: 'CREATE_DB.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.
+    - 5.2. Run bat file. Metadata module installed.
 6. [Download O&M database configuration files, located in folder 05) Database of this repository]()
+
+
+
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
 
 
