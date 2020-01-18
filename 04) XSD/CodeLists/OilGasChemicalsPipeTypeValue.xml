@@ -1,0 +1,23 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="OilGasChemicalsPipeTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6">OilGasChemicalsPipeTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9164_12137">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/OilGasChemicalsPipeTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9164_12138">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/OilGasChemicalsPipeTypeValue">distributionPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9164_12139">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/OilGasChemicalsPipeTypeValue">pressuredPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9164_12140">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/OilGasChemicalsPipeTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

@@ -1,0 +1,38 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="LineMeaningValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6">LineMeaningValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11974">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11975">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">coolingLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11976">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">constantLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11977">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">flowLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11978">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">returnLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11979">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">steamLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9142_11980">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LineMeaningValue">condensateLine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

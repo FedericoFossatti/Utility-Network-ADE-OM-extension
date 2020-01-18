@@ -1,0 +1,23 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="WaterPipeTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6">WaterPipeTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9209_12308">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/WaterPipeTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9209_12309">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/WaterPipeTypeValue">distributionPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9209_12310">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/WaterPipeTypeValue">pressuredPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9209_12311">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/WaterPipeTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

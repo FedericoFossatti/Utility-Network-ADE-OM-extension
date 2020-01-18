@@ -1,0 +1,23 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="LocationAccuracyValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6">LocationAccuracyValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9147_12025">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LocationAccuracyValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9147_12026">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LocationAccuracyValue">30 cm</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9147_12027">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LocationAccuracyValue">50 cm</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9147_12028">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/LocationAccuracyValue">100 cm</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

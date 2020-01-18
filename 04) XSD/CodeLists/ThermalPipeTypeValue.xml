@@ -1,0 +1,23 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="ThermalPipeTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6">ThermalPipeTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9207_12303">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/ThermalPipeTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9207_12304">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/ThermalPipeTypeValue">distributionPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9207_12305">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/ThermalPipeTypeValue">pressuredPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9207_12306">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/5.6/ThermalPipeTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>
