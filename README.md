@@ -33,7 +33,7 @@ The complete workflow presented here is for:
 A) Deriving from the data model the XSD file necessary for the data transformation with FME.  
 B) Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).  
 C) Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database.  
-D) Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contianed in the raw data.  
+D) Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
 
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
 This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
@@ -41,7 +41,7 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
 
-* *A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).* *
+ *A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).* 
 
 
 ### B) O&M Database setup (PostgreSQL + PostGIS)
