@@ -2,12 +2,12 @@
 Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 ## Background
----
+
 The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.
 
 
 ## Resources & Related Work
----
+
 - [Tatjana Kutzner - UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
 - [Ramon ter Huurne - PDEng Project - O&M Conceptual Schema](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance)
 - [3D City DB - The database implementation of CityGML](https://www.3dcitydb.org/3dcitydb/)
@@ -18,7 +18,7 @@ The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of Cit
 
 
 ## Contents of the repository
----
+
 This repository contains the following folders:
 1. Raw data - Contains the utility network used for the validation of the data model
 2. UML - Contains the Universal Markup Language diagram of the data model
@@ -30,7 +30,7 @@ This repository contains the following folders:
 
 
 ## Quickstart guide
----
+
 The folders in the respository are numbered in approximate chronological order related to when they need to be used in the workflow.
 The complete workflow presented here is for:  
 **A)** Deriving from the data model the XSD file necessary for the data transformation with FME.  
@@ -39,6 +39,7 @@ For detailed documentation to the somewhat similar process of installing Energy 
 **C)** Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database.  
 **D)** Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
 
+---
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
 This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
 1. Open UML model and alter classes / codelists / relations
@@ -47,7 +48,7 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 
  *A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).* 
 
-
+---
 ### B) O&M Database setup (PostgreSQL + PostGIS)
 This step is mandatory.  
 1. Download and install PostgreSQL
@@ -66,17 +67,17 @@ This step is mandatory.
 
   *<UtilityNetwork ADE - O&M extension database installation complete>* 
 
-
+---
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
   *In progress...*
 
-
+---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
 **Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foriegn Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
 
 1. Download DummyAttributes.xlsx and the Python scripts.  
 2. Edit fields indicated in the Python scripts to match the configuration of your database.  
 3. Run scripts.  
-4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples.  
+4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples. They use the INSERT stroed procedureds available with the database installation.  
 
   *<UtilityNetwork ADE - O&M dummy attributes uploaded.>*
