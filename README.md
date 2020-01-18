@@ -2,10 +2,12 @@
 Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 ## Background
+---
 The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.
 
 
 ## Resources & Related Work
+---
 - [Tatjana Kutzner - UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
 - [Ramon ter Huurne - PDEng Project - O&M Conceptual Schema](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance)
 - [3D City DB - The database implementation of CityGML](https://www.3dcitydb.org/3dcitydb/)
@@ -16,6 +18,7 @@ The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of Cit
 
 
 ## Contents of the repository
+---
 This repository contains the following folders:
 1. Raw data - Contains the utility network used for the validation of the data model
 2. UML - Contains the Universal Markup Language diagram of the data model
@@ -27,14 +30,14 @@ This repository contains the following folders:
 
 
 ## Quickstart guide
-
+---
 The folders in the respository are numbered in approximate chronological order related to when they need to be used in the workflow.
 The complete workflow presented here is for:  
-A) Deriving from the data model the XSD file necessary for the data transformation with FME.  
-B) Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).
+**A)** Deriving from the data model the XSD file necessary for the data transformation with FME.  
+**B)** Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).
 For detailed documentation to the somewhat similar process of installing Energy ADE check the documentation in [this repository](https://github.com/gioagu/3dcitydb_energy_ade/tree/master/manual).  
-C) Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database.  
-D) Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
+**C)** Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database.  
+**D)** Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
 
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
 This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
@@ -62,7 +65,6 @@ This step is mandatory.
 6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
   *<UtilityNetwork ADE - O&M extension database installation complete>* 
-
 
 
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
