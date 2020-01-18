@@ -41,7 +41,7 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
 
-A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).
+* *A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).* *
 
 
 ### B) O&M Database setup (PostgreSQL + PostGIS)
@@ -54,17 +54,26 @@ This step is mandatory.
      3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
 4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB.  
      4.1. Edit the .BAT file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
-     4.2. Run .BAT and when prompter enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
+     4.2. Run .BAT and when prompted enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
 5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).  
      5.1. Edit the .BAT file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
      5.2. Run bat file. Metadata module installed.  
-6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, using the query tool.
+6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.
 
-<UtilityNetwork ADE - O&M extension database installation complete>
+* *<UtilityNetwork ADE - O&M extension database installation complete>* *
 
 
 
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
+In progress...
 
 
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
+**Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foriegn Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
+
+1. Download DummyAttributes.xlsx and the Python scripts.  
+2. Edit fields indicated in the Python scripts to match the configuration of your database.  
+3. Run scripts.  
+4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples.  
+
+* *<UtilityNetwork ADE - O&M dummy attributes uploaded.>* *
