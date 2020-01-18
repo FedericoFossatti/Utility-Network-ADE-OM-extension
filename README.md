@@ -3,7 +3,11 @@ Master's thesis project at the University of Twente. Implementation and validati
 
 ## Background
 
-The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.
+The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by Ramon ter Huurne to expand the original data model to cover concepts in the domain of O&M.  
+As a continuation to his work, I aim to:  
+(a) Implement the data model in a spatial-relational database  
+(b) Populate the database with one utility network that previously needs to be transformed to become compliant with the model  
+(c) Validate the usefuleness of the model for O&M via querying the database and visualizing the results in a GIS application  
 
 
 ## Resources & Related Work
