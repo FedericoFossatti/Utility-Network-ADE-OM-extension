@@ -1,3 +1,4 @@
+# No need to edit anything here, this function is called by the other script.
 def excel_to_postgresql(pg_dbname, pg_password, xls_book_name, xls_sheet_name, pg_function_name, pg_user='postgres',
                         pg_host='localhost', pg_port='5432'):
     import psycopg2
