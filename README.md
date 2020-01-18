@@ -12,6 +12,7 @@ As a continuation to his work, I aim to:
 
 ## Resources & Related Work
 
+- [CityGML](https://www.opengeospatial.org/standards/citygml)  
 - [Tatjana Kutzner - UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
 - [Ramon ter Huurne - PDEng Project - O&M Conceptual Schema](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance)
 - [3D City DB - The database implementation of CityGML](https://www.3dcitydb.org/3dcitydb/)
