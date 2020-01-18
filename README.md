@@ -58,14 +58,14 @@ This step is mandatory.
 5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).  
      5.1. Edit the .BAT file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
      5.2. Run bat file. Metadata module installed.  
-6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.
+6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
-* *<UtilityNetwork ADE - O&M extension database installation complete>* *
+  *<UtilityNetwork ADE - O&M extension database installation complete>* 
 
 
 
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
-In progress...
+  *In progress...*
 
 
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
@@ -76,4 +76,4 @@ In progress...
 3. Run scripts.  
 4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples.  
 
-* *<UtilityNetwork ADE - O&M dummy attributes uploaded.>* *
+  *<UtilityNetwork ADE - O&M dummy attributes uploaded.>*
