@@ -29,7 +29,11 @@ This repository contains the following folders:
 ## Quickstart guide
 
 The folders in the respository are numbered in approximate chronological order related to when they need to be used in the workflow.
-The workflow is for creating a spatial-relational database and loading the raw data into it after transforming it to comply with the O&M conceptual shcema.
+The complete workflow presented here is for:  
+A) Deriving from the data model the XSD file necessary for the data transformation with FME.  
+B) Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).  
+C) Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database
+D) Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contianed in the raw data.  
 
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
 This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
@@ -54,7 +58,9 @@ This step is mandatory.
 5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).  
      5.1. Edit the .BAT file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
      5.2. Run bat file. Metadata module installed.  
-6. [Download O&M database configuration files, located in folder 05) Database of this repository](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/05)%20Database)
+6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, using the query tool.
+
+<UtilityNetwork ADE - O&M extension database installation complete>
 
 
 
