@@ -46,7 +46,8 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
 
- *A new .XSD schema has been derived. The schema is one of the inputs for the transformation in part C).* 
+ *UtilityNetwork ADE - O&M extension .XSD schema has been derived.>*  
+ The schema is one of the inputs for the transformation in part C). 
 
 ---
 ### B) O&M Database setup (PostgreSQL + PostGIS)
@@ -80,4 +81,4 @@ This step is mandatory.
 3. Run scripts.  
 4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples. They use the INSERT stroed procedureds available with the database installation.  
 
-  *<UtilityNetwork ADE - O&M dummy attributes uploaded.>*
+  *<UtilityNetwork ADE - O&M extension dummy attributes uploaded>*
