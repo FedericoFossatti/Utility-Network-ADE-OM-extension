@@ -44,17 +44,17 @@ A new .XSD schema has been derived. The schema is one of the inputs for the tran
 This step is mandatory.  
 1. Download and install PostgreSQL
 2. Download and install PostGIS
-3. Set up new database in PostgreSQL. Open query tool in new database and excecute:
-    - 3.1. CREATE EXTENSION postgis;
-    - 3.2. CREATE EXTENSION postgis_raster;
-    - 3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB
-    - 4.1. Edit the .BAT file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.
-    - 4.2. Run .BAT and when prompter enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed. 
-5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).
-    - 5.1. Edit the .BAT file: 'CREATE_DB.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.
-    - 5.2. Run bat file. Metadata module installed.
-6. [Download O&M database configuration files, located in folder 05) Database of this repository]()
+3. Set up new database in PostgreSQL. Open query tool in new database and excecute:  
+     3.1. CREATE EXTENSION postgis;  
+     3.2. CREATE EXTENSION postgis_raster;  
+     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
+4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB.  
+     4.1. Edit the .BAT file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
+     4.2. Run .BAT and when prompter enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
+5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).  
+     5.1. Edit the .BAT file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
+     5.2. Run bat file. Metadata module installed.  
+6. [Download O&M database configuration files, located in folder 05) Database of this repository](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/05)%20Database)
 
 
 
