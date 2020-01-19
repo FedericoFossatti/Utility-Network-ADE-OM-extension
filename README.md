@@ -63,7 +63,7 @@ This step is mandatory.
      3.1. CREATE EXTENSION postgis;  
      3.2. CREATE EXTENSION postgis_raster;  
      3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
-4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, not withe the newer version of 3DCityDB.  
+4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
      4.1. Edit the batch file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
      4.2. Run batch file and when prompted enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
 5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
