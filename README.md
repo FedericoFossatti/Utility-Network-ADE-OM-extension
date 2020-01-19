@@ -80,7 +80,7 @@ This step is mandatory.
   
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
-**Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foriegn Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
+**Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foreign Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
 
 1. Download DummyAttributes.xlsx and the Python scripts.  
 2. Edit fields indicated in the Python scripts to match the configuration of your database.  
