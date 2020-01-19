@@ -51,7 +51,7 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 2. Add changes to ShapeChange configuration file (if any)
 3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
 
- *UtilityNetwork ADE - O&M extension .XSD schema has been derived.>*  
+ *<UtilityNetwork ADE - O&M extension .XSD schema has been derived.>*  
  The schema is one of the inputs for the transformation in part C). 
 
 ---
@@ -75,7 +75,7 @@ This step is mandatory.
 
 ---
 ### C) Transformation of raw data into database encoding (Safe Sodtware FME)
-  *In progress...*
+  *<In progress...>*
 
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
