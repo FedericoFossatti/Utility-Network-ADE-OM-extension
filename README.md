@@ -51,7 +51,7 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 2. Add changes to ShapeChange configuration file (if any)
 3. Download and use [ShapeChange](https://shapechange.net/get-started/)  
 
- *<UtilityNetwork ADE - O&M extension .XSD schema has been derived.>*  
+ ***UtilityNetwork ADE - O&M extension .XSD schema has been derived***  
  The schema is one of the inputs for the transformation in part C). 
 
 ---
@@ -71,12 +71,13 @@ This step is mandatory.
      5.2. Run batch file. Metadata module installed.  
 6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
-  *<UtilityNetwork ADE - O&M extension database installation complete>* 
+  ***UtilityNetwork ADE - O&M extension database installation complete***
 
 ---
-### C) Transformation of raw data into database encoding (Safe Sodtware FME)
-  *<In progress...>*
+### C) Transformation of raw data into database encoding (Safe Software FME)  
 
+  ***In progress...***
+  
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
 **Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foriegn Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
@@ -86,4 +87,4 @@ This step is mandatory.
 3. Run scripts.  
 4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples. They use the INSERT stroed procedureds available with the database installation.  
 
-  *<UtilityNetwork ADE - O&M extension dummy attributes uploaded>*
+  ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
