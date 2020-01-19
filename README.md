@@ -41,7 +41,7 @@ The complete workflow presented here is for:
 **A)** Deriving from the data model the XSD file necessary for the data transformation with FME.  
 **B)** Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).
 For detailed documentation to the somewhat similar process of installing Energy ADE check the documentation in [this repository](https://github.com/gioagu/3dcitydb_energy_ade/tree/master/manual). For a detailed tutorial on 3D City DB, check [this repositorty](https://github.com/3dcitydb/tutorials). Please note that the incompatibility of the present database implementation with the importer-exporter tool of 3DCityDB requires different workflows, but the tutorial is good for understanding 3D City DB.    
-**C)** Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Also loading this data into the spatial-relational database.  
+**C)** Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Thereafter, loading this dataset into the spatial-relational database.  
 **D)** Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
 
 ---
@@ -49,7 +49,7 @@ For detailed documentation to the somewhat similar process of installing Energy 
 This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
 1. Open UML model and alter classes / codelists / relations
 2. Add changes to ShapeChange configuration file (if any)
-3. Downlaod and use [ShapeChange](https://shapechange.net/get-started/)  
+3. Download and use [ShapeChange](https://shapechange.net/get-started/)  
 
  *<UtilityNetwork ADE - O&M extension .XSD schema has been derived.>*  
  The schema is one of the inputs for the transformation in part C). 
