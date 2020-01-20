@@ -19,7 +19,7 @@ As a continuation to his work, I aim to:
 - [Giorgio Agugiaro - Database Implementation of UN ADE 0.9.2](https://github.com/gioagu/3dcitydb_utility_network_ade)
 - [Giorgio Agugiaro - 3DCityDB metadata module](https://github.com/gioagu/3dcitydb_metadata_module)
 - [Xander den Duijn - Master's Project](https://github.com/XanderdenDuijn/CityGML-Utility-Network-ADE)
-- [Isaac Boates - Master's Project](https://github.com/iboates/UtilityNetwork-ADE-3DCityDB-Manager)
+- [Isaac Boates - Nanaimo sample](https://github.com/iboates/CityGML-UtilityNetwork-ADE-Nanaimo-Water-Network-Sample)
 - [Isaac Boates - Nanaimo to UN_AE extension of 3DCityDB](https://github.com/iboates/nanaimo_3dcitydb)  
 
 
