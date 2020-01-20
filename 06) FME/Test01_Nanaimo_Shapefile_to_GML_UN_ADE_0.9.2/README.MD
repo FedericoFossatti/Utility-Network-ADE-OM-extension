@@ -3,8 +3,8 @@ The input files are in shapefile format.
 The output file is a UtilityNetwork ADE 0.9.2 compliant GML file.
 
 * Links  
- - [Dataset](https://www.nanaimo.ca/open-data-catalogue/DataBrowser/nanaimo/Storm#param=NOFILTER--DataView--Results)  
- - [Digital Elevation Model](https://maps.canada.ca/czs/index-en.html)  
+  * [Dataset](https://www.nanaimo.ca/open-data-catalogue/DataBrowser/nanaimo/Storm#param=NOFILTER--DataView--Results)  
+  * [Digital Elevation Model](https://maps.canada.ca/czs/index-en.html)  
 * Type of network: Storm sewers  
 * Location: Nanaimo, Canada  
 * Horizontal reference system: SRID=26910  
