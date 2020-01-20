@@ -20,6 +20,7 @@ As a continuation to his work, I aim to:
 - [Giorgio Agugiaro - 3DCityDB metadata module](https://github.com/gioagu/3dcitydb_metadata_module)
 - [Xander den Duijn - Master's Project](https://github.com/XanderdenDuijn/CityGML-Utility-Network-ADE)
 - [Isaac Boates - Master's Project](https://github.com/iboates/UtilityNetwork-ADE-3DCityDB-Manager)
+- [Isaac Boates - Nanaimo to UN_AE extension of 3DCityDB](https://github.com/iboates/nanaimo_3dcitydb)  
 
 
 ## Contents of the repository
