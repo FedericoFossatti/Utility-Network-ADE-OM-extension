@@ -16,7 +16,7 @@
 --See notes on file 01_uom5_FUNCTIONS.
 --
 -- ***************************************************************************
--- ***************** 06_uom5_QUERIES.sql *******************
+-- ***************** uom5_QUERIES.sql *******************
 --
 -- This script stores the queries performed on the database
 -- It is merely a compilation of SQL queries to be run independently from each other.
