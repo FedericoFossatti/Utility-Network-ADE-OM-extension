@@ -1,0 +1,138 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="ControllerComponentValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8">ControllerComponentValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11783">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11784">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">switch</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11785">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">valve</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11786">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">blowOffValve</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11787">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">slideValve</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11788">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">shutOffValve</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11789">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">pump</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11790">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">generator</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11791">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">turbine</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11792">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">voltageRegulator</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11793">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">pressureRegulator</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11794">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">grounding</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11795">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">tap</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11796">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">fuse</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11797">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">loadTapCharger</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11798">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">capacitorControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11799">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">recloserElectricControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11800">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">recloserHydraulicControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11801">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">regulatorControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11802">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">relayControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11803">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">sectionizerElectricControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11804">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">sectionizerHydraulicControl</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11805">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">flowRegulator</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11806">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">surgeReliefTank</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11807">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">invertedSyphon</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11808">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">overflow</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9104_11809">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/ControllerComponentValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

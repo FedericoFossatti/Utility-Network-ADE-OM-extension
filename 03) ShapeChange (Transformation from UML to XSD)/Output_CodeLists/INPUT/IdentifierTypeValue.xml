@@ -1,0 +1,23 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="IdentifierTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8">IdentifierTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9135_11956">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/IdentifierTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9135_11957">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/IdentifierTypeValue">EAN</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9135_11958">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/IdentifierTypeValue">CPID</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9135_11959">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/IdentifierTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

@@ -1,0 +1,78 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="FunctionValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8">FunctionValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11891">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11892">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">abstraction</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11893">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">branch</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11894">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">control</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11895">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">distribution</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11896">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">draining</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11897">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">feeding</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11898">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">measurement</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11899">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">observer</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11900">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">protection</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11901">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">shortCircuit</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11902">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">shutOff</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11903">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">storage</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11904">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">venting</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9123_11905">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/FunctionValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

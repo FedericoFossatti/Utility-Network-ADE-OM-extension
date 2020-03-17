@@ -1,0 +1,33 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="TelecommunicationCableTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8">TelecommunicationCableTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12275">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12276">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">coaxial</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12277">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">unshieldedTwistedPair</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12278">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">shieldedTwistedPair</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12279">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">opticalFiber</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9203_12280">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/TelecommunicationCableTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>

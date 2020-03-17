@@ -1,0 +1,33 @@
+<?xml-stylesheet type='text/xsl' href='./CodelistDictionary-v32.xsl'?><gml:Dictionary xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="SewerPipeTypeValue" xsi:schemaLocation="http://www.opengis.net/gml null">
+  <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8">SewerPipeTypeValue</gml:identifier>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12195">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">unknown</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12196">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">distributionPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12197">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">openChannelPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12198">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">vacuumPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12199">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">pressuredPipe</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+  <gml:dictionaryEntry>
+    <gml:Definition gml:id="_9184_12200">
+      <gml:identifier codeSpace="http://www.utwente.nl/ade/utilityOM/0.5.8/SewerPipeTypeValue">other</gml:identifier>
+    </gml:Definition>
+  </gml:dictionaryEntry>
+</gml:Dictionary>
