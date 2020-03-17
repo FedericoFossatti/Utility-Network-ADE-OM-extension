@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bldg="http://www.opengis.net/citygml/building/2.0" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:gml="http://www.opengis.net/gml" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:uom5="http://www.utwente.nl/ade/utilityOM/0.5.8" elementFormDefault="qualified" targetNamespace="http://www.utwente.nl/ade/utilityOM/0.5.8" version="0.5.8">
+  <annotation>
+    <documentation>The Operations and Maintenance application schema describes the topology and vocabulary of utility networks - with a focus on operations and maintenance related activities. Online repository to be found at https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance.
+https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension
+
+Model builds upon the CityGML UtilityNetwork ADE 0.9.2. Online repository to be found at https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE. 
+
+CityGML UtilityNetwork ADE allows for identification and modeling of utility networks. The Operations and Maintenance conceptual model adds those concepts and relations relevant for the domain of operations and maintenance.</documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/citygml/2.0" schemaLocation="http://schemas.opengis.net/citygml/2.0/cityGMLBase.xsd"/>
+  <import namespace="http://www.opengis.net/citygml/building/2.0" schemaLocation="http://schemas.opengis.net/citygml/building/2.0/building.xsd"/>
+  <import namespace="http://www.opengis.net/citygml/cityobjectgroup/2.0" schemaLocation="http://schemas.opengis.net/citygml/cityobjectgroup/2.0/cityObjectGroup.xsd"/>
+  <import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element abstract="true" name="AbstractCable" substitutionGroup="uom5:AbstractDistributionComponent" type="uom5:AbstractCableType"/>
+  <complexType abstract="true" name="AbstractCableType">
+    <complexContent>
+      <extension base="uom5:AbstractDistributionComponentType">
+        <sequence>
+          <element minOccurs="0" name="numberOfConductors" type="integer"/>
+          <element minOccurs="0" name="conductorCrossSection" type="gml:AreaType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractCablePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractCable"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="supply" substitutionGroup="core:_GenericApplicationPropertyOfCityObject" type="uom5:AbstractCommoditySupplyPropertyType"/>
+  <element name="roleInNetwork" substitutionGroup="core:_GenericApplicationPropertyOfCityObject" type="uom5:RoleInNetworkPropertyType"/>
+  <element abstract="true" name="AbstractCommodity" substitutionGroup="gml:_Feature" type="uom5:AbstractCommodityType"/>
+  <complexType abstract="true" name="AbstractCommodityType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedNetwork" type="uom5:NetworkPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="isClassifiedBy" type="uom5:AbstractCommodityClassifierPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractCommodityClassifier" substitutionGroup="gml:_Feature" type="uom5:AbstractCommodityClassifierType"/>
+  <complexType abstract="true" name="AbstractCommodityClassifierType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="molFormula" type="string"/>
+          <element minOccurs="0" name="description" type="string"/>
+          <element minOccurs="0" name="physicalForm" type="string"/>
+          <element minOccurs="0" name="molecularWeight" type="string"/>
+          <element minOccurs="0" name="signalWord" type="string"/>
+          <element minOccurs="0" name="isChemicalComplex" type="boolean"/>
+          <element minOccurs="0" name="hazardClass" type="uom5:HazardClassPropertyType"/>
+          <element minOccurs="0" name="definesCommodity" type="uom5:AbstractCommodityPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="consistsOfFurtherElements" type="uom5:AbstractCommodityClassifierPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractCommodityClassifierPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractCommodityClassifier"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractCommoditySupply" substitutionGroup="gml:_Object" type="uom5:AbstractCommoditySupplyType"/>
+  <complexType abstract="true" name="AbstractCommoditySupplyType">
+    <sequence>
+      <element minOccurs="0" name="potentialSupply" type="uom5:SupplyPropertyType"/>
+      <element minOccurs="0" name="currentSupply" type="uom5:SupplyPropertyType"/>
+      <element maxOccurs="unbounded" minOccurs="0" name="storage" type="uom5:StoragePropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="AbstractCommoditySupplyPropertyType">
+    <sequence>
+      <element ref="uom5:AbstractCommoditySupply"/>
+    </sequence>
+  </complexType>
+  <element abstract="true" name="AbstractDistributionComponent" substitutionGroup="uom5:AbstractNetworkFeature" type="uom5:AbstractDistributionComponentType"/>
+  <complexType abstract="true" name="AbstractDistributionComponentType">
+    <complexContent>
+      <extension base="uom5:AbstractNetworkFeatureType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+          <element minOccurs="0" name="functionOfLine" type="gml:CodeType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractDistributionComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractDistributionComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractFunctionalComponent" substitutionGroup="uom5:AbstractNetworkFeature" type="uom5:AbstractFunctionalComponentType"/>
+  <complexType abstract="true" name="AbstractFunctionalComponentType">
+    <complexContent>
+      <extension base="uom5:AbstractNetworkFeatureType">
+        <sequence>
+          <element minOccurs="0" name="isAccessible" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractFunctionalComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractFunctionalComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractLink" substitutionGroup="gml:_Feature" type="uom5:AbstractLinkType"/>
+  <complexType abstract="true" name="AbstractLinkType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="direction" type="gml:SignType"/>
+          <element minOccurs="0" name="linkControl" type="uom5:AbstractLinkControlPropertyType"/>
+          <element minOccurs="0" name="realization" type="gml:CurvePropertyType"/>
+          <element name="end" type="uom5:NodePropertyType"/>
+          <element name="start" type="uom5:NodePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractLinkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractLink"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractLinkControl" substitutionGroup="gml:_Object" type="uom5:AbstractLinkControlType"/>
+  <complexType abstract="true" name="AbstractLinkControlType">
+    <sequence/>
+  </complexType>
+  <complexType name="AbstractLinkControlPropertyType">
+    <sequence>
+      <element ref="uom5:AbstractLinkControl"/>
+    </sequence>
+  </complexType>
+  <element abstract="true" name="AbstractMaterialProperties" substitutionGroup="gml:_Feature" type="uom5:AbstractMaterialPropertiesType"/>
+  <complexType abstract="true" name="AbstractMaterialPropertiesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="type" type="gml:CodeType"/>
+          <element minOccurs="0" name="specificClass" type="string"/>
+          <element minOccurs="0" name="strength" type="double"/>
+          <element minOccurs="0" name="ductility" type="double"/>
+          <element minOccurs="0" name="conductivity" type="double"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedComponent" type="uom5:AbstractNetworkFeaturePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractMaterialPropertiesPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractMaterialProperties"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractNetworkFeature" substitutionGroup="core:_CityObject" type="uom5:AbstractNetworkFeatureType"/>
+  <complexType abstract="true" name="AbstractNetworkFeatureType">
+    <complexContent>
+      <extension base="core:AbstractCityObjectType">
+        <sequence>
+          <element minOccurs="0" name="function" type="gml:CodeType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="usage" type="gml:CodeType"/>
+          <element minOccurs="0" name="connectedCityObject" type="anyURI"/>
+          <element minOccurs="0" name="status" type="uom5:StatusValueType"/>
+          <element minOccurs="0" name="locationQuality" type="uom5:SpatialQualityValueType"/>
+          <element minOccurs="0" name="elevationQuality" type="uom5:SpatialQualityValueType"/>
+          <element minOccurs="0" name="locationAccuracy" type="gml:CodeType"/>
+          <element minOccurs="0" name="standardDepth" type="gml:MeasureType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="measuredDepth" type="uom5:MeasuredDepthPropertiesPropertyType"/>
+          <element minOccurs="0" name="dimensions" type="uom5:DimensionalPropertiesPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="surroundingSoil" type="uom5:SurroundingSoilPropertiesPropertyType"/>
+          <element minOccurs="0" name="identificationExtraInfo" type="uom5:IdentificationPropertiesPropertyType"/>
+          <element minOccurs="0" name="date" type="uom5:DatePropertiesPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="cost" type="uom5:CostPropertiesPropertyType"/>
+          <element minOccurs="0" name="lod1Geometry" type="gml:GeometryPropertyType"/>
+          <element minOccurs="0" name="hasImpact" type="uom5:ImpactPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="hasMaterialProperties" type="uom5:AbstractMaterialPropertiesPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="hasMaintenanceActivity" type="uom5:MaintenanceActivityPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedParty" type="uom5:RelatedPartyPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="hasPerformance" type="uom5:PerformancePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="consistsOf" type="uom5:AbstractNetworkFeaturePropertyType"/>
+          <element minOccurs="0" name="topoGraph" type="uom5:FeatureGraphPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractNetworkFeaturePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractNetworkFeature"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractPipe" substitutionGroup="uom5:AbstractDistributionComponent" type="uom5:AbstractPipeType"/>
+  <complexType abstract="true" name="AbstractPipeType">
+    <complexContent>
+      <extension base="uom5:AbstractDistributionComponentType">
+        <sequence>
+          <element minOccurs="0" name="isGravity" type="boolean"/>
+          <element minOccurs="0" name="slope" type="gml:MeasureType"/>
+          <element minOccurs="0" name="isDirectionalDrilling" type="boolean"/>
+          <element minOccurs="0" name="hasCathodicProtection" type="boolean"/>
+          <element minOccurs="0" name="pressureGrade" type="gml:MeasureType"/>
+          <element minOccurs="0" name="maxCapacity" type="gml:MeasureType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractPipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractPipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractProtectiveComponent" substitutionGroup="uom5:AbstractNetworkFeature" type="uom5:AbstractProtectiveComponentType"/>
+  <complexType abstract="true" name="AbstractProtectiveComponentType">
+    <complexContent>
+      <extension base="uom5:AbstractNetworkFeatureType">
+        <sequence>
+          <element minOccurs="0" name="numberOfPipes" type="integer"/>
+          <element minOccurs="0" name="numbeOfCables" type="integer"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="contains" type="uom5:AbstractNetworkFeaturePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AbstractProtectiveComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:AbstractProtectiveComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="AbstractSignature" substitutionGroup="gml:_Object" type="uom5:AbstractSignatureType"/>
+  <complexType abstract="true" name="AbstractSignatureType">
+    <sequence/>
+  </complexType>
+  <complexType name="AbstractSignaturePropertyType">
+    <sequence>
+      <element ref="uom5:AbstractSignature"/>
+    </sequence>
+  </complexType>
+  <element name="Bedding" substitutionGroup="uom5:AbstractProtectiveComponent" type="uom5:BeddingType"/>
+  <complexType name="BeddingType">
+    <complexContent>
+      <extension base="uom5:AbstractProtectiveComponentType">
+        <sequence>
+          <element minOccurs="0" name="width" type="gml:LengthType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BeddingPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:Bedding"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="CableValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="electricityCable"/>
+      <enumeration value="telecommunicationCable"/>
+    </restriction>
+  </simpleType>
+  <element name="ChemicalClassifier" substitutionGroup="uom5:AbstractCommodityClassifier" type="uom5:ChemicalClassifierType"/>
+  <complexType name="ChemicalClassifierType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityClassifierType">
+        <sequence>
+          <element minOccurs="0" name="ECNo" type="string"/>
+          <element minOccurs="0" name="CASNo" type="string"/>
+          <element minOccurs="0" name="IUCLIDChemicalDataSheet" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ChemicalClassifierPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ChemicalClassifier"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="ComplexFunctionalComponent" substitutionGroup="uom5:AbstractFunctionalComponent" type="uom5:ComplexFunctionalComponentType"/>
+  <complexType name="ComplexFunctionalComponentType">
+    <complexContent>
+      <extension base="uom5:AbstractFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="component" type="uom5:AbstractFunctionalComponentPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ComplexFunctionalComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ComplexFunctionalComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="ConnectionComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:ConnectionComponentType"/>
+  <complexType name="ConnectionComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+          <element minOccurs="0" name="connectionMode" type="string"/>
+          <element minOccurs="0" name="neutralEarthConnection" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ConnectionComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ConnectionComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="Contact" substitutionGroup="gml:_Object" type="uom5:ContactType"/>
+  <complexType name="ContactType">
+    <sequence>
+      <element minOccurs="0" name="address" type="core:AddressPropertyType"/>
+      <element minOccurs="0" name="contactInstruction" type="string"/>
+      <element minOccurs="0" name="electronicMailAddress" type="string"/>
+      <element minOccurs="0" name="hoursOfService" type="string"/>
+      <element minOccurs="0" name="telephoneFacsimile" type="string"/>
+      <element minOccurs="0" name="telephoneVoiceOrganisation" type="string"/>
+      <element minOccurs="0" name="telephoneVoiceIndividual" type="string"/>
+      <element minOccurs="0" name="website" type="string"/>
+      <element minOccurs="0" name="coc" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="ContactPropertyType">
+    <sequence>
+      <element ref="uom5:Contact"/>
+    </sequence>
+  </complexType>
+  <element name="ControllerComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:ControllerComponentType"/>
+  <complexType name="ControllerComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+          <element minOccurs="0" name="preferredMode" type="string"/>
+          <element minOccurs="0" name="actualMode" type="string"/>
+          <element minOccurs="0" name="rotationalDirection" type="string"/>
+          <element minOccurs="0" name="numberOfRotations" type="integer"/>
+          <element minOccurs="0" name="neutralEarthConnection" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ControllerComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ControllerComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="CostProperties" substitutionGroup="gml:_Object" type="uom5:CostPropertiesType"/>
+  <complexType name="CostPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="costType" type="gml:CodeType"/>
+      <element minOccurs="0" name="currency" type="string"/>
+      <element minOccurs="0" name="totalCosts" type="double"/>
+      <element minOccurs="0" name="costsMeasuringUnit" type="string"/>
+      <element minOccurs="0" name="costsPerUnit" type="double"/>
+    </sequence>
+  </complexType>
+  <complexType name="CostPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:CostProperties"/>
+    </sequence>
+  </complexType>
+  <element name="DateProperties" substitutionGroup="gml:_Object" type="uom5:DatePropertiesType"/>
+  <complexType name="DatePropertiesType">
+    <sequence>
+      <element minOccurs="0" name="dateOfInstallation" type="date"/>
+      <element minOccurs="0" name="dateInUse" type="date"/>
+      <element minOccurs="0" name="dateOfLocationMeasuring" type="date"/>
+      <element minOccurs="0" name="dateOfRegistration" type="date"/>
+      <element minOccurs="0" name="dateOfAbandonment" type="date"/>
+      <element minOccurs="0" name="dateOfRemoval" type="date"/>
+    </sequence>
+  </complexType>
+  <complexType name="DatePropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:DateProperties"/>
+    </sequence>
+  </complexType>
+  <element name="DimensionalProperties" substitutionGroup="gml:_Object" type="uom5:DimensionalPropertiesType"/>
+  <complexType name="DimensionalPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="shape" type="uom5:ShapeValueType"/>
+      <element minOccurs="0" name="wallThickness" type="gml:LengthType"/>
+      <element minOccurs="0" name="exteriorWidth" type="gml:LengthType"/>
+      <element minOccurs="0" name="exteriorHeight" type="gml:LengthType"/>
+      <element minOccurs="0" name="exteriorDiameter" type="gml:LengthType"/>
+      <element minOccurs="0" name="exteriorLength" type="gml:LengthType"/>
+      <element minOccurs="0" name="interiorWidth" type="gml:LengthType"/>
+      <element minOccurs="0" name="interiorHeight" type="gml:LengthType"/>
+      <element minOccurs="0" name="interiorDiameter" type="gml:LengthType"/>
+      <element minOccurs="0" name="interiorLength" type="gml:LengthType"/>
+    </sequence>
+  </complexType>
+  <complexType name="DimensionalPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:DimensionalProperties"/>
+    </sequence>
+  </complexType>
+  <element name="ElectricalCommodity" substitutionGroup="uom5:AbstractCommodity" type="uom5:ElectricalCommodityType"/>
+  <complexType name="ElectricalCommodityType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:ElectricalCommodityValueType"/>
+          <element minOccurs="0" name="nominalVoltage" type="gml:MeasureType"/>
+          <element minOccurs="0" name="operatingVoltage" type="gml:MeasureType"/>
+          <element minOccurs="0" name="voltageRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="amperageRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="bandWidth" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="phaseValue" type="integer"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ElectricalCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ElectricalCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="ElectricalCommodityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="directCurrent"/>
+      <enumeration value="singlePhaseAlternatingCurrent"/>
+      <enumeration value="threePhaseAlternatingCurrent"/>
+      <enumeration value="undulatoryCurrent"/>
+      <enumeration value="telephone"/>
+      <enumeration value="data"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="ElectricalSupply" substitutionGroup="uom5:AbstractCommoditySupply" type="uom5:ElectricalSupplyType"/>
+  <complexType name="ElectricalSupplyType">
+    <complexContent>
+      <extension base="uom5:AbstractCommoditySupplyType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:ElectricalCommodityValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ElectricalSupplyPropertyType">
+    <sequence>
+      <element ref="uom5:ElectricalSupply"/>
+    </sequence>
+  </complexType>
+  <element name="ElectricityCable" substitutionGroup="uom5:AbstractCable" type="uom5:ElectricityCableType"/>
+  <complexType name="ElectricityCableType">
+    <complexContent>
+      <extension base="uom5:AbstractCableType">
+        <sequence>
+          <element minOccurs="0" name="electricityCableType" type="gml:CodeType"/>
+          <element minOccurs="0" name="voltageGrade" type="gml:MeasureType"/>
+          <element minOccurs="0" name="ampacity" type="gml:MeasureType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ElectricityCablePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ElectricityCable"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="ExteriorMaterial" substitutionGroup="uom5:AbstractMaterialProperties" type="uom5:ExteriorMaterialType"/>
+  <complexType name="ExteriorMaterialType">
+    <complexContent>
+      <extension base="uom5:AbstractMaterialPropertiesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ExteriorMaterialPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ExteriorMaterial"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="FeatureGraph" substitutionGroup="gml:_Feature" type="uom5:FeatureGraphType"/>
+  <complexType name="FeatureGraphType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="linkMember" type="uom5:InteriorFeatureLinkPropertyType"/>
+          <element maxOccurs="unbounded" name="nodeMember" type="uom5:NodePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="networkLinkMember" type="uom5:NetworkLinkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FeatureGraphPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:FeatureGraph"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="FillingMaterial" substitutionGroup="uom5:AbstractMaterialProperties" type="uom5:FillingMaterialType"/>
+  <complexType name="FillingMaterialType">
+    <complexContent>
+      <extension base="uom5:AbstractMaterialPropertiesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FillingMaterialPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:FillingMaterial"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="GHSClassifier" substitutionGroup="uom5:AbstractCommodityClassifier" type="uom5:GHSClassifierType"/>
+  <complexType name="GHSClassifierType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityClassifierType">
+        <sequence>
+          <element minOccurs="0" name="ECNo" type="string"/>
+          <element minOccurs="0" name="CASNo" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GHSClassifierPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:GHSClassifier"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="GaseousCommodity" substitutionGroup="uom5:AbstractCommodity" type="uom5:GaseousCommodityType"/>
+  <complexType name="GaseousCommodityType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:GaseousCommodityValueType"/>
+          <element minOccurs="0" name="nominalPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="operatingPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="maximumPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="pressureRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="electricConductivity" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="concentration" type="gml:MeasureType"/>
+          <element minOccurs="0" name="isExplosive" type="boolean"/>
+          <element minOccurs="0" name="lighterThanAir" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GaseousCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:GaseousCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="GaseousCommodityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="naturalGas"/>
+      <enumeration value="petroleumGas"/>
+      <enumeration value="helium"/>
+      <enumeration value="air"/>
+      <enumeration value="dioxygen"/>
+      <enumeration value="nitrogenGas"/>
+      <enumeration value="naturalGasAndTetrahydrothiophene"/>
+      <enumeration value="hydrogen"/>
+      <enumeration value="carbon"/>
+      <enumeration value="methane"/>
+      <enumeration value="residualGas"/>
+      <enumeration value="argon"/>
+      <enumeration value="butadiene"/>
+      <enumeration value="butadiene1,3"/>
+      <enumeration value="butane"/>
+      <enumeration value="propane"/>
+      <enumeration value="compressedAir"/>
+      <enumeration value="ethylene"/>
+      <enumeration value="isobutane"/>
+      <enumeration value="vinylChloride"/>
+      <enumeration value="oxygen"/>
+      <enumeration value="propylene"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="GaseousSupply" substitutionGroup="uom5:AbstractCommoditySupply" type="uom5:GaseousSupplyType"/>
+  <complexType name="GaseousSupplyType">
+    <complexContent>
+      <extension base="uom5:AbstractCommoditySupplyType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:GaseousCommodityValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GaseousSupplyPropertyType">
+    <sequence>
+      <element ref="uom5:GaseousSupply"/>
+    </sequence>
+  </complexType>
+  <element name="GenericClassifier" substitutionGroup="uom5:AbstractCommodityClassifier" type="uom5:GenericClassifierType"/>
+  <complexType name="GenericClassifierType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityClassifierType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GenericClassifierPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:GenericClassifier"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <complexType name="Geometry root::GM_ObjectPropertyType">
+    <choice minOccurs="0"/>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="GroundWaterProperties" substitutionGroup="gml:_Object" type="uom5:GroundWaterPropertiesType"/>
+  <complexType name="GroundWaterPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="isRealTime" type="boolean"/>
+      <element minOccurs="0" name="level" type="gml:MeasureType"/>
+      <element minOccurs="0" name="reference" type="gml:CodeType"/>
+    </sequence>
+  </complexType>
+  <complexType name="GroundWaterPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:GroundWaterProperties"/>
+    </sequence>
+  </complexType>
+  <element name="HazardClass" substitutionGroup="gml:_Object" type="uom5:HazardClassType"/>
+  <complexType name="HazardClassType">
+    <sequence>
+      <element minOccurs="0" name="hazardClass" type="string"/>
+      <element minOccurs="0" name="categoryMode" type="string"/>
+      <element minOccurs="0" name="statementCode" type="string"/>
+      <element minOccurs="0" name="pictogramCode" type="string"/>
+      <element minOccurs="0" name="pictogramURI" type="anyURI"/>
+    </sequence>
+  </complexType>
+  <complexType name="HazardClassPropertyType">
+    <sequence>
+      <element ref="uom5:HazardClass"/>
+    </sequence>
+  </complexType>
+  <element name="IdentificationProperties" substitutionGroup="gml:_Object" type="uom5:IdentificationPropertiesType"/>
+  <complexType name="IdentificationPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="identifier" type="anyURI"/>
+      <element minOccurs="0" name="identifierType" type="gml:CodeType"/>
+      <element minOccurs="0" name="colour" type="string"/>
+      <element minOccurs="0" name="address" type="core:AddressPropertyType"/>
+      <element minOccurs="0" name="isLabelVisible" type="boolean"/>
+      <element minOccurs="0" name="labelLocation" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="IdentificationPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:IdentificationProperties"/>
+    </sequence>
+  </complexType>
+  <element abstract="true" name="Impact" substitutionGroup="gml:_Feature" type="uom5:ImpactType"/>
+  <complexType abstract="true" name="ImpactType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="environmentalImpactScore" type="double"/>
+          <element minOccurs="0" name="environmentalImpactExtraInformation" type="anyURI"/>
+          <element minOccurs="0" name="socialImpactScore" type="double"/>
+          <element minOccurs="0" name="socialImpactExtraInformation" type="anyURI"/>
+          <element minOccurs="0" name="economiclImpactScore" type="double"/>
+          <element minOccurs="0" name="economicImpactExtraInformation" type="anyURI"/>
+          <element minOccurs="0" name="associatedNetwork" type="uom5:NetworkPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedComponent" type="uom5:AbstractNetworkFeaturePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ImpactPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:Impact"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="InterFeatureLink" substitutionGroup="uom5:AbstractLink" type="uom5:InterFeatureLinkType"/>
+  <complexType name="InterFeatureLinkType">
+    <complexContent>
+      <extension base="uom5:AbstractLinkType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:InterFeatureLinkValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="InterFeatureLinkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:InterFeatureLink"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="InterFeatureLinkValueType">
+    <restriction base="string">
+      <enumeration value="connects"/>
+      <enumeration value="contains"/>
+    </restriction>
+  </simpleType>
+  <element name="InteriorFeatureLink" substitutionGroup="uom5:AbstractLink" type="uom5:InteriorFeatureLinkType"/>
+  <complexType name="InteriorFeatureLinkType">
+    <complexContent>
+      <extension base="uom5:AbstractLinkType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="InteriorFeatureLinkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:InteriorFeatureLink"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="InteriorMaterial" substitutionGroup="uom5:AbstractMaterialProperties" type="uom5:InteriorMaterialType"/>
+  <complexType name="InteriorMaterialType">
+    <complexContent>
+      <extension base="uom5:AbstractMaterialPropertiesType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="InteriorMaterialPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:InteriorMaterial"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="LiquidCommodity" substitutionGroup="uom5:AbstractCommodity" type="uom5:LiquidCommodityType"/>
+  <complexType name="LiquidCommodityType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:LiquidCommodityValueType"/>
+          <element minOccurs="0" name="nominalPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="operatingPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="maximumPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="pressureRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="flowRateRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="temperatureRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="phValueRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="electricConductivity" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="isExplosive" type="boolean"/>
+          <element minOccurs="0" name="isCorrosive" type="boolean"/>
+          <element minOccurs="0" name="isFlammable" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LiquidCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:LiquidCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="LiquidCommodityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="potableWater"/>
+      <enumeration value="rawWater"/>
+      <enumeration value="stormWater"/>
+      <enumeration value="sanitaryWater"/>
+      <enumeration value="wasteWater"/>
+      <enumeration value="combinedWater"/>
+      <enumeration value="reclaimedWater"/>
+      <enumeration value="districtHeatingWater"/>
+      <enumeration value="saltWater"/>
+      <enumeration value="gasoline"/>
+      <enumeration value="oil"/>
+      <enumeration value="gasohol"/>
+      <enumeration value="acid"/>
+      <enumeration value="kerosine"/>
+      <enumeration value="liquefiedNaturalGas"/>
+      <enumeration value="liquefiedPetroleumGas"/>
+      <enumeration value="acetone"/>
+      <enumeration value="chlorine"/>
+      <enumeration value="crude"/>
+      <enumeration value="dichloroethane"/>
+      <enumeration value="gasoil"/>
+      <enumeration value="liquidAmmonia"/>
+      <enumeration value="liquidHydroCarbon"/>
+      <enumeration value="tetrachloroethane"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="LiquidSupply" substitutionGroup="uom5:AbstractCommoditySupply" type="uom5:LiquidSupplyType"/>
+  <complexType name="LiquidSupplyType">
+    <complexContent>
+      <extension base="uom5:AbstractCommoditySupplyType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:LiquidCommodityValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LiquidSupplyPropertyType">
+    <sequence>
+      <element ref="uom5:LiquidSupply"/>
+    </sequence>
+  </complexType>
+  <element name="MaintenanceActivity" substitutionGroup="gml:_Feature" type="uom5:MaintenanceActivityType"/>
+  <complexType name="MaintenanceActivityType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="maintenanceTimeline" type="uom5:MaintenanceTimelineTypeType"/>
+          <element minOccurs="0" name="maintenanceType" type="uom5:MaintenanceTypeType"/>
+          <element minOccurs="0" name="activityType" type="gml:CodeType"/>
+          <element minOccurs="0" name="extraInformation" type="anyURI"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="cost" type="uom5:CostPropertiesPropertyType"/>
+          <element minOccurs="0" name="startDate" type="date"/>
+          <element minOccurs="0" name="endDate" type="date"/>
+          <element maxOccurs="unbounded" name="associatedComponent" type="uom5:AbstractNetworkFeaturePropertyType"/>
+          <element maxOccurs="unbounded" name="associatedParty" type="uom5:RelatedPartyPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MaintenanceActivityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:MaintenanceActivity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="MaintenanceTimelineTypeType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="lastMaintenance"/>
+      <enumeration value="currentMaintenance"/>
+      <enumeration value="plannedMaintenance"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="MaintenanceTypeType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="correctiveMaintenance"/>
+      <enumeration value="preventiveMaintenance"/>
+      <enumeration value="predictiveMaintenance"/>
+      <enumeration value="prescriptiveMaintenance"/>
+    </restriction>
+  </simpleType>
+  <element name="MeasuredDepthProperties" substitutionGroup="gml:_Object" type="uom5:MeasuredDepthPropertiesType"/>
+  <complexType name="MeasuredDepthPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="depthLevelMeasurement" type="gml:MeasureType"/>
+      <element minOccurs="0" name="dateOfDepthMeasurement" type="date"/>
+      <element minOccurs="0" name="pointOfMeasurement" type="gml:CodeType"/>
+      <element minOccurs="0" name="depthReference" type="gml:CodeType"/>
+      <element minOccurs="0" name="depthQuality" type="uom5:SpatialQualityValueType"/>
+      <element minOccurs="0" name="depthAccuracy" type="gml:CodeType"/>
+      <element minOccurs="0" name="location" type="gml:PointPropertyType"/>
+      <element minOccurs="0" name="angleOfRotation" type="gml:MeasureType"/>
+    </sequence>
+  </complexType>
+  <complexType name="MeasuredDepthPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:MeasuredDepthProperties"/>
+    </sequence>
+  </complexType>
+  <element name="MeasurementComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:MeasurementComponentType"/>
+  <complexType name="MeasurementComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MeasurementComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:MeasurementComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="Network" substitutionGroup="core:_CityObject" type="uom5:NetworkType"/>
+  <complexType name="NetworkType">
+    <complexContent>
+      <extension base="core:AbstractCityObjectType">
+        <sequence>
+          <element minOccurs="0" name="class" type="uom5:NetworkClassValueType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="function" type="uom5:NetworkFunctionAndUsageValueType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="usage" type="uom5:NetworkFunctionAndUsageValueType"/>
+          <element minOccurs="0" name="transportedCommodity" type="uom5:AbstractCommodityPropertyType"/>
+          <element minOccurs="0" name="hasImpact" type="uom5:ImpactPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="component" type="uom5:AbstractNetworkFeaturePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="hasPerformance" type="uom5:PerformancePropertyType"/>
+          <element minOccurs="0" name="supplies" type="uom5:SupplyAreaPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedParty" type="uom5:RelatedPartyPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="superOrdinateNetwork" type="uom5:NetworkPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="subOrdinateNetwork" type="uom5:NetworkPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="subNetwork" type="uom5:NetworkPropertyType"/>
+          <element minOccurs="0" name="topoGraph" type="uom5:NetworkGraphPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NetworkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:Network"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="NetworkClassValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="electricity"/>
+      <enumeration value="oilGasChemicals"/>
+      <enumeration value="sewage"/>
+      <enumeration value="water"/>
+      <enumeration value="thermal"/>
+      <enumeration value="telecommunication"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="NetworkFunctionAndUsageValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="supply"/>
+      <enumeration value="disposal"/>
+      <enumeration value="communication"/>
+    </restriction>
+  </simpleType>
+  <element name="NetworkGraph" substitutionGroup="gml:_Feature" type="uom5:NetworkGraphType"/>
+  <complexType name="NetworkGraphType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="featureGraphMember" type="uom5:FeatureGraphPropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="linkMember" type="uom5:InterFeatureLinkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NetworkGraphPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:NetworkGraph"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="NetworkLink" substitutionGroup="uom5:AbstractLink" type="uom5:NetworkLinkType"/>
+  <complexType name="NetworkLinkType">
+    <complexContent>
+      <extension base="uom5:AbstractLinkType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NetworkLinkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:NetworkLink"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="NetworkUsageType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="supply"/>
+      <enumeration value="disposal"/>
+      <enumeration value="communication"/>
+    </restriction>
+  </simpleType>
+  <element name="Node" substitutionGroup="gml:_Feature" type="uom5:NodeType"/>
+  <complexType name="NodeType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:NodeValueType"/>
+          <element minOccurs="0" name="connectionSignature" type="uom5:AbstractSignaturePropertyType"/>
+          <element minOccurs="0" name="linkControl" type="uom5:AbstractLinkControlPropertyType"/>
+          <element minOccurs="0" name="realization" type="gml:PointPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NodePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:Node"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="NodeValueType">
+    <restriction base="string">
+      <enumeration value="interior"/>
+      <enumeration value="exterior"/>
+    </restriction>
+  </simpleType>
+  <element name="OilGasChemicalsPipe" substitutionGroup="uom5:AbstractPipe" type="uom5:OilGasChemicalsPipeType"/>
+  <complexType name="OilGasChemicalsPipeType">
+    <complexContent>
+      <extension base="uom5:AbstractPipeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OilGasChemicalsPipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:OilGasChemicalsPipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="OpticalCommodity" substitutionGroup="uom5:AbstractCommodity" type="uom5:OpticalCommodityType"/>
+  <complexType name="OpticalCommodityType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:OpticalCommodityValueType"/>
+          <element minOccurs="0" name="modeType" type="uom5:OpticalModeValueType"/>
+          <element minOccurs="0" name="bandWidth" type="gml:QuantityExtentType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OpticalCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:OpticalCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="OpticalCommodityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="light"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="OpticalModeValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="singleMode"/>
+      <enumeration value="multiMode"/>
+    </restriction>
+  </simpleType>
+  <element name="OpticalSupply" substitutionGroup="uom5:AbstractCommoditySupply" type="uom5:OpticalSupplyType"/>
+  <complexType name="OpticalSupplyType">
+    <complexContent>
+      <extension base="uom5:AbstractCommoditySupplyType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:OpticalCommodityValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OpticalSupplyPropertyType">
+    <sequence>
+      <element ref="uom5:OpticalSupply"/>
+    </sequence>
+  </complexType>
+  <element name="OtherComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:OtherComponentType"/>
+  <complexType name="OtherComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OtherComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:OtherComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="OtherShell" substitutionGroup="uom5:ProtectiveShell" type="uom5:OtherShellType"/>
+  <complexType name="OtherShellType">
+    <complexContent>
+      <extension base="uom5:ProtectiveShellType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OtherShellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:OtherShell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="PartyRoleValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="supplier"/>
+      <enumeration value="owner"/>
+      <enumeration value="operator"/>
+      <enumeration value="contractor"/>
+      <enumeration value="manufacturer"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="Performance" substitutionGroup="gml:_Feature" type="uom5:PerformanceType"/>
+  <complexType name="PerformanceType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="performanceType" type="uom5:PerformanceTypeType"/>
+          <element minOccurs="0" name="performanceRequirement" type="string"/>
+          <element minOccurs="0" name="performanceScore" type="double"/>
+          <element minOccurs="0" name="isSufficient" type="boolean"/>
+          <element minOccurs="0" name="dateOfPerformanceMeasuring" type="date"/>
+          <element minOccurs="0" name="extraInformation" type="anyURI"/>
+          <element minOccurs="0" name="associatedComponent" type="uom5:AbstractNetworkFeaturePropertyType"/>
+          <element minOccurs="0" name="associatedNetwork" type="uom5:NetworkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PerformancePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:Performance"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="PerformanceTypeType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="engineeringPerformance"/>
+      <enumeration value="serviceabilityPerformance"/>
+      <enumeration value="safetyPerformance"/>
+      <enumeration value="financialPerformance"/>
+      <enumeration value="sustainabilityPerformance"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="PipeValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="freshWaterPipe"/>
+      <enumeration value="oilGasChemicalsPipe"/>
+      <enumeration value="sewerPipe"/>
+      <enumeration value="thermalPipe"/>
+    </restriction>
+  </simpleType>
+  <element name="ProtectiveShell" substitutionGroup="uom5:AbstractProtectiveComponent" type="uom5:ProtectiveShellType"/>
+  <complexType name="ProtectiveShellType">
+    <complexContent>
+      <extension base="uom5:AbstractProtectiveComponentType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ProtectiveShellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ProtectiveShell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="RectangularShell" substitutionGroup="uom5:ProtectiveShell" type="uom5:RectangularShellType"/>
+  <complexType name="RectangularShellType">
+    <complexContent>
+      <extension base="uom5:ProtectiveShellType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RectangularShellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:RectangularShell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="RelatedParty" substitutionGroup="gml:_Feature" type="uom5:RelatedPartyType"/>
+  <complexType name="RelatedPartyType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="individualName" type="string"/>
+          <element minOccurs="0" name="organisationName" type="string"/>
+          <element minOccurs="0" name="role" type="uom5:PartyRoleValueType"/>
+          <element minOccurs="0" name="contact" type="uom5:ContactPropertyType"/>
+          <element maxOccurs="unbounded" name="associatedComponent" type="uom5:AbstractNetworkFeaturePropertyType"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="associatedMaintenanceActivity" type="uom5:MaintenanceActivityPropertyType"/>
+          <element maxOccurs="unbounded" name="associatedNetwork" type="uom5:NetworkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RelatedPartyPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:RelatedParty"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="RoleInNetwork" substitutionGroup="gml:_Feature" type="uom5:RoleInNetworkType"/>
+  <complexType name="RoleInNetworkType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="functionInNetwork" type="gml:CodeType"/>
+          <element minOccurs="0" name="usageInNetwork" type="gml:CodeType"/>
+          <element name="network" type="uom5:NetworkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoleInNetworkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:RoleInNetwork"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="RoundShell" substitutionGroup="uom5:ProtectiveShell" type="uom5:RoundShellType"/>
+  <complexType name="RoundShellType">
+    <complexContent>
+      <extension base="uom5:ProtectiveShellType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RoundShellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:RoundShell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="SewerPipe" substitutionGroup="uom5:AbstractPipe" type="uom5:SewerPipeType"/>
+  <complexType name="SewerPipeType">
+    <complexContent>
+      <extension base="uom5:AbstractPipeType">
+        <sequence>
+          <element minOccurs="0" name="sewerPipeType" type="gml:CodeType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SewerPipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:SewerPipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="ShapeValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="circular"/>
+      <enumeration value="rectangular"/>
+      <enumeration value="ellipsoidal"/>
+      <enumeration value="trapezoid"/>
+      <enumeration value="irregular"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="SignalWordValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="nonHazardous"/>
+      <enumeration value="attention"/>
+      <enumeration value="hazardous"/>
+    </restriction>
+  </simpleType>
+  <element name="SimpleFunctionalComponent" substitutionGroup="uom5:AbstractFunctionalComponent" type="uom5:SimpleFunctionalComponentType"/>
+  <complexType name="SimpleFunctionalComponentType">
+    <complexContent>
+      <extension base="uom5:AbstractFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="isActive" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SimpleFunctionalComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:SimpleFunctionalComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="SolidCommodity" substitutionGroup="uom5:AbstractCommodity" type="uom5:SolidCommodityType"/>
+  <complexType name="SolidCommodityType">
+    <complexContent>
+      <extension base="uom5:AbstractCommodityType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:SolidCommodityValueType"/>
+          <element minOccurs="0" name="nominalPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="operatingPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="maximumPressure" type="gml:MeasureType"/>
+          <element minOccurs="0" name="pressureRange" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="electricConductivity" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="concentration" type="gml:MeasureType"/>
+          <element minOccurs="0" name="isExplosive" type="boolean"/>
+          <element minOccurs="0" name="isFlammable" type="gml:MeasureType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SolidCommodityPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:SolidCommodity"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <simpleType name="SolidCommodityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="carbonDust"/>
+      <enumeration value="stone"/>
+      <enumeration value="ore"/>
+      <enumeration value="sand"/>
+      <enumeration value="phenol"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="SolidSupply" substitutionGroup="uom5:AbstractCommoditySupply" type="uom5:SolidSupplyType"/>
+  <complexType name="SolidSupplyType">
+    <complexContent>
+      <extension base="uom5:AbstractCommoditySupplyType">
+        <sequence>
+          <element minOccurs="0" name="type" type="uom5:SolidCommodityValueType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SolidSupplyPropertyType">
+    <sequence>
+      <element ref="uom5:SolidSupply"/>
+    </sequence>
+  </complexType>
+  <simpleType name="SpatialQualityValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="standard"/>
+      <enumeration value="estimated"/>
+      <enumeration value="surveyed"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StatusValueType">
+    <restriction base="string">
+      <enumeration value="unknown"/>
+      <enumeration value="decommissioned"/>
+      <enumeration value="disused"/>
+      <enumeration value="functional"/>
+      <enumeration value="projected"/>
+      <enumeration value="underConstruction"/>
+      <enumeration value="other"/>
+    </restriction>
+  </simpleType>
+  <element name="Storage" substitutionGroup="gml:_Object" type="uom5:StorageType"/>
+  <complexType name="StorageType">
+    <sequence>
+      <element minOccurs="0" name="class" type="gml:CodeType"/>
+      <element minOccurs="0" name="inFlowRate" type="gml:MeasureType"/>
+      <element minOccurs="0" name="outFlowRate" type="gml:MeasureType"/>
+      <element minOccurs="0" name="fillLevel" type="gml:MeasureType"/>
+      <element minOccurs="0" name="maxCapacity" type="gml:MeasureType"/>
+    </sequence>
+  </complexType>
+  <complexType name="StoragePropertyType">
+    <sequence>
+      <element ref="uom5:Storage"/>
+    </sequence>
+  </complexType>
+  <element name="StorageComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:StorageComponentType"/>
+  <complexType name="StorageComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="storage" type="uom5:StoragePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="StorageComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:StorageComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="Supply" substitutionGroup="gml:_Object" type="uom5:SupplyType"/>
+  <complexType name="SupplyType">
+    <sequence>
+      <element minOccurs="0" name="flowRate" type="gml:MeasureType"/>
+      <element minOccurs="0" name="status" type="uom5:StatusValueType"/>
+    </sequence>
+  </complexType>
+  <complexType name="SupplyPropertyType">
+    <sequence>
+      <element ref="uom5:Supply"/>
+    </sequence>
+  </complexType>
+  <element name="SupplyArea" substitutionGroup="grp:CityObjectGroup" type="uom5:SupplyAreaType"/>
+  <complexType name="SupplyAreaType">
+    <complexContent>
+      <extension base="grp:CityObjectGroupType">
+        <sequence>
+          <element name="suppliedBy" type="uom5:NetworkPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SupplyAreaPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:SupplyArea"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="SurroundingSoilProperties" substitutionGroup="gml:_Object" type="uom5:SurroundingSoilPropertiesType"/>
+  <complexType name="SurroundingSoilPropertiesType">
+    <sequence>
+      <element minOccurs="0" name="type" type="gml:CodeType"/>
+      <element minOccurs="0" name="reactivity" type="gml:MeasureType"/>
+      <element minOccurs="0" name="permeability" type="gml:MeasureType"/>
+      <element minOccurs="0" name="strength" type="gml:MeasureType"/>
+      <element minOccurs="0" name="density" type="gml:MeasureType"/>
+      <element minOccurs="0" name="moistureContent" type="gml:MeasureType"/>
+      <element minOccurs="0" name="groundWater" type="uom5:GroundWaterPropertiesPropertyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="SurroundingSoilPropertiesPropertyType">
+    <sequence>
+      <element ref="uom5:SurroundingSoilProperties"/>
+    </sequence>
+  </complexType>
+  <element name="TelecommunicationCable" substitutionGroup="uom5:AbstractCable" type="uom5:TelecommunicationCableType"/>
+  <complexType name="TelecommunicationCableType">
+    <complexContent>
+      <extension base="uom5:AbstractCableType">
+        <sequence>
+          <element minOccurs="0" name="telecommunicationCableType" type="gml:CodeType"/>
+          <element minOccurs="0" name="maxBandwidth" type="gml:QuantityExtentType"/>
+          <element minOccurs="0" name="impedance" type="gml:MeasureType"/>
+          <element minOccurs="0" name="attenuation" type="gml:MeasureType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TelecommunicationCablePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:TelecommunicationCable"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="TerminalComponent" substitutionGroup="uom5:SimpleFunctionalComponent" type="uom5:TerminalComponentType"/>
+  <complexType name="TerminalComponentType">
+    <complexContent>
+      <extension base="uom5:SimpleFunctionalComponentType">
+        <sequence>
+          <element minOccurs="0" name="class" type="gml:CodeType"/>
+          <element minOccurs="0" name="preferredMode" type="string"/>
+          <element minOccurs="0" name="actualMode" type="string"/>
+          <element minOccurs="0" name="rotationalDirection" type="string"/>
+          <element minOccurs="0" name="numberOfRotations" type="integer"/>
+          <element minOccurs="0" name="neutralEarthConnection" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TerminalComponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:TerminalComponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="ThermalPipe" substitutionGroup="uom5:AbstractPipe" type="uom5:ThermalPipeType"/>
+  <complexType name="ThermalPipeType">
+    <complexContent>
+      <extension base="uom5:AbstractPipeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ThermalPipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:ThermalPipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="WaterPipe" substitutionGroup="uom5:AbstractPipe" type="uom5:WaterPipeType"/>
+  <complexType name="WaterPipeType">
+    <complexContent>
+      <extension base="uom5:AbstractPipeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WaterPipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="uom5:WaterPipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <element name="buildingHabitants" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding" type="integer"/>
+</schema>
