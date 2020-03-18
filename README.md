@@ -30,9 +30,10 @@ This repository contains the following folders:
 2. UML - Contains the Universal Markup Language diagram of the data model
 3. ShapeChange - Contains the configuration file for deriving the .XSD schema from the UML diagrams
 4. XSD - Contains the .XSD derived from UML using ShapeChange 
-5. Database - Contains the database encoding of the UML data model
+5. SQL - Contains the database encoding of the UML data model
 6. FME - Contains workspaces for manipulating spatial data
 7. Python - Contains routines to interact between Excel and the databse implementation in PostgreSQL
+8. DB queries - Contains several queries used to test the system
 
 
 ## Quickstart guide
