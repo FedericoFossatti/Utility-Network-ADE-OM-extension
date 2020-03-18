@@ -1,4 +1,4 @@
-# CityGML - UtilityNetwork ADE - Operation and Maintenance extension 
+# Operation & Maintenance extension of CityGML UtilityNetwork ADE  
 Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 ## Background
