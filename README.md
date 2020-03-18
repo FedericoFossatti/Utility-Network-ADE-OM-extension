@@ -61,10 +61,11 @@ This step is optional: the O&M conceptual schema is ready, the ShapeChange confi
 This step is mandatory.  
 1. Download and install PostgreSQL
 2. Download and install PostGIS
-3. Set up new database in PostgreSQL. Open query tool in new database and excecute:  
-     3.1. CREATE EXTENSION postgis;  
-     3.2. CREATE EXTENSION postgis_raster;  
-     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
+3. Set up new database in PostgreSQL. ***It is preferrable to use lowercase for the DB name***. Open query tool in new database and excecute:  
+     3.1. CREATE EXTENSION IF NOT EXISTS "postgis";  
+     3.2. CREATE EXTENSION IF NOT EXISTS "postgis_raster";  
+     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+     3.4. CREATE EXTENSION IF NOT EXISTS "pgrouting";  
 4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
      4.1. Edit the batch file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
      4.2. Run batch file and when prompted enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
@@ -82,7 +83,7 @@ This step is mandatory.
   
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
-**Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foreign Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_unom5_TABLES v03).
+**Note:** The relational database in PostgreSQL is strict in terms of the values (data types) that the records can take, whereas Excel is not. Moreover, when writing 'dummy' attributes in the Excel file, care should be taken to respect the Foreign Key Constraints of the database. An entity-relationship model of the whole database is provided to help understand these constraints. Additional clarifications can be sought in the SQL file for setting up the tables in the database (03_uom5_TABLES).
 
 1. Download DummyAttributes.xlsx and the Python scripts.  
 2. Edit fields indicated in the Python scripts to match the configuration of your database.  
@@ -90,3 +91,8 @@ This step is mandatory.
 4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples. They use the INSERT stroed procedureds available with the database installation.  
 
   ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
+  
+  ---
+### E) Querying database
+
+  ***In progress...***
