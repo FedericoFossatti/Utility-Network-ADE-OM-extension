@@ -69,10 +69,13 @@ This step is mandatory.
 4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
      4.1. Edit the batch file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
      4.2. Run batch file and when prompted enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
-5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
-     5.1. Edit the batch file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
-     5.2. Run batch file. Metadata module installed.  
-6. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
+5. [Download 3D City DB utilities package (optional)](https://github.com/gioagu/3dcitydb_utilities).   
+     5.1. Edit the batch file: 'CREATE_DB_citydb_utilities.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
+     5.2. Run batch file. Utilities package installed.  
+6. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
+     6.1. Edit the batch file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
+     6.2. Run batch file. Metadata module installed.  
+7. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
   ***UtilityNetwork ADE - O&M extension database installation complete***
 
