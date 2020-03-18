@@ -7,7 +7,7 @@ The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of Cit
 As a continuation to his work, I aim to:  
 (a) Implement the data model in a spatial-relational database as was done by Giorgio Agugiaro for [Energy ADE](https://github.com/gioagu/3dcitydb_energy_ade) and [UtilityNetwork ADE](https://github.com/gioagu/3dcitydb_utility_network_ade).  
 (b) Populate the database with one utility network that previously needs to be transformed to become compliant with the O&M data model.  
-(c) Validate the usefuleness of the model for O&M via querying the database and visualizing the results in a GIS application.  
+(c) Validate the usefulness  of the model for O&M via querying the database and visualizing the results in a GIS application.  
 
 
 ## Resources & Related Work
@@ -37,15 +37,16 @@ This repository contains the following folders:
 8. [DB queries](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/08%29%20DB%20Queries) - Contains several queries used to test the system
 
 
-## Quickstart guide
+## QuickStart guide
 
-The folders in the respository are numbered in approximate chronological order related to when they need to be used in the workflow.
+The directories in the repository are numbered in approximate chronological order related to when they need to be used in the workflow.
 The complete workflow presented here is for:  
 **A)** Deriving from the data model the XSD file necessary for the data transformation with FME.  
 **B)** Setting up a spatial-relational database compliant with the O&M schema, on top of the database encoding of CityGML (3D City DB).
-For detailed documentation to the somewhat similar process of installing Energy ADE check the documentation in [this repository](https://github.com/gioagu/3dcitydb_energy_ade/tree/master/manual). For a detailed tutorial on 3D City DB, check [this repositorty](https://github.com/3dcitydb/tutorials). Please note that the incompatibility of the present database implementation with the importer-exporter tool of 3DCityDB requires different workflows, but the tutorial is good for understanding 3D City DB.    
+For detailed documentation to the somewhat similar process of installing Energy ADE check the documentation in [this repository](https://github.com/gioagu/3dcitydb_energy_ade/tree/master/manual). For a detailed tutorial on 3D City DB, check [this repository](https://github.com/3dcitydb/tutorials). Please note that the incompatibility of the present database implementation with the importer-exporter tool of 3DCityDB requires different workflows, but the tutorial is good for understanding 3D City DB.    
 **C)** Transforming the raw data (a utility network in XX format) to (a) become topologically correct and (b) comply with the O&M data model. Thereafter, loading this dataset into the spatial-relational database.  
-**D)** Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparce attribute information contained in the raw data.  
+**D)** Loading 'dummy' attributes to the spatial-spatial relational database using Python. Dummy attributes are used to compensate for the sparse attribute information contained in the raw data.  
+**E)** Querying Database. 
 
 ---
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
@@ -62,7 +63,7 @@ This step is ***optional***: the O&M conceptual schema is ready, the ShapeChange
 This step is mandatory.  
 1. Download and install PostgreSQL
 2. Download and install PostGIS
-3. Set up new database in PostgreSQL. ***It is preferrable to use lowercase for the DB name***. Open query tool in new database and excecute:  
+3. Set up new database in PostgreSQL. ***It is preferable to use lowercase for the DB name***. Open query tool in new database and execute:  
      3.1. CREATE EXTENSION IF NOT EXISTS "postgis";  
      3.2. CREATE EXTENSION IF NOT EXISTS "postgis_raster";  
      3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
@@ -76,7 +77,7 @@ This step is mandatory.
 6. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
      6.1. Edit the batch file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
      6.2. Run batch file. Metadata module installed.  
-7. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
+7. Download O&M database configuration files, located in folder "05) Database" of this repository. Execute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
  ***UtilityNetwork ADE - O&M extension database installation complete***
 
@@ -105,4 +106,4 @@ This step is mandatory.
   ---
 ### E) Querying database
 
- Several queries are stored in a file in this repository that help explore the capabilities of the data model. The queries relate to a street reconstruction project and the information needs of an asset manager throught the phases of such a project.
+ Several queries are stored in a file in this repository that help explore the capabilities of the data model. The queries relate to a street reconstruction project and the information needs of an asset manager through the phases of such a project.
