@@ -78,7 +78,7 @@ This step is mandatory.
      6.2. Run batch file. Metadata module installed.  
 7. Download O&M database configuration files, located in folder "05) Database" of this repository. Excecute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
 
-  ***UtilityNetwork ADE - O&M extension database installation complete***
+ ***UtilityNetwork ADE - O&M extension database installation complete***
 
 ---
 ### C) Transformation of raw data into database encoding (Safe Software FME)  
@@ -90,7 +90,7 @@ This step is mandatory.
  5. In your new database connection edit "Parameters - Advanced - SQL to run before read" as instructed in the READ ME FIRST notice.
  6. The FME workbench has notes on the transformers used. Run workbench.
   
-    ***UtilityNetwork ADE - O&M extension database populated with campus data***
+ ***UtilityNetwork ADE - O&M extension database populated with campus data***
   
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
@@ -100,7 +100,7 @@ This step is mandatory.
 2. Edit fields indicated in the Python scripts to match the configuration of your database.  
 3. Run scripts.  
 
-  ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
+ ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
   
   ---
 ### E) Querying database
