@@ -26,14 +26,14 @@ As a continuation to his work, I aim to:
 ## Contents of the repository
 
 This repository contains the following folders:
-1. Raw data - Contains the utility network used for the validation of the data model
-2. UML - Contains the Universal Markup Language diagram of the data model
-3. ShapeChange - Contains the configuration file for deriving the .XSD schema from the UML diagrams
-4. XSD - Contains the .XSD derived from UML using ShapeChange 
-5. SQL - Contains the database encoding of the UML data model
-6. FME - Contains workspaces for manipulating spatial data
-7. Python - Contains routines to interact between Excel and the databse implementation in PostgreSQL
-8. DB queries - Contains several queries used to test the system
+1. [Raw data](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/01)%20Raw%20Data) - Contains the utility network used for the validation of the data model
+2. [UML](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/02)%20UML%20(Data%20model)) - Contains the Universal Markup Language diagram of the data model
+3. [ShapeChange](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/03)%20ShapeChange%20(Transformation%20from%20UML%20to%20XSD)) - Contains the configuration file for deriving the .XSD schema from the UML diagrams
+4. [XSD](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/04)%20XSD) - Contains the .XSD derived from UML using ShapeChange 
+5. [SQL](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/05)%20SQL%20(Database%20set%20up%20files)) - Contains the database encoding of the UML data model (files to fully set up the O&M database)
+6. [FME](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/06)%20FME%20(Data%20transformation%20and%20loading%20workbench)) - Contains workspaces for manipulating spatial data
+7. [Python](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/07)%20Python%20(Loading%20dummy%20attributes)) - Contains routines to interact between Excel and the databse implementation in PostgreSQL
+8. [DB queries](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/08)%20DB%20Queries) - Contains several queries used to test the system
 
 
 ## Quickstart guide
@@ -48,7 +48,7 @@ For detailed documentation to the somewhat similar process of installing Energy 
 
 ---
 ### A) Conceptual schema / Data model (Sparx Systems Enterprise Architect)
-This step is optional: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
+This step is ***optional***: the O&M conceptual schema is ready, the ShapeChange configuration file too, and the .XSD schema file has already been derived.  
 1. Open UML model and alter classes / codelists / relations
 2. Add changes to ShapeChange configuration file (if any)
 3. Download and use [ShapeChange](https://shapechange.net/get-started/)  
@@ -82,7 +82,14 @@ This step is mandatory.
 ---
 ### C) Transformation of raw data into database encoding (Safe Software FME)  
 
-  ***In progress...***
+ 1. Download FME workbench, utility network shapefiles and digital terrain model.
+ 2. Read the READ ME FIRST notice in the FME workbench.
+ 3. Check in the FME workbench the path to all 'readers' (network shapefiles and digital terrain model GML file).
+ 4. Create a database connection to the O&M database setup in point **B)**
+ 5. In your new database connection edit "Parameters - Advanced - SQL to run before read" as instructed in the READ ME FIRST notice.
+ 6. The FME workbench has notes on the transformers used. Run workbench.
+  
+    ***UtilityNetwork ADE - O&M extension database populated with campus data***
   
 ---
 ### D) Loading 'dummy' attributes from Excel into PostgreSQL (Python)
@@ -91,11 +98,10 @@ This step is mandatory.
 1. Download DummyAttributes.xlsx and the Python scripts.  
 2. Edit fields indicated in the Python scripts to match the configuration of your database.  
 3. Run scripts.  
-4. Please note: only whole tables can be inserted, the functions do not update tables by adding records to the existing tuples. They use the INSERT stroed procedureds available with the database installation.  
 
   ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
   
   ---
 ### E) Querying database
 
-  ***In progress...***
+ Several queries are stored in a file in this repository that help explore the capabilities of the data model. The queries relate to a street reconstruction project and the information needs of an asset manager throught the phases of such a project.
