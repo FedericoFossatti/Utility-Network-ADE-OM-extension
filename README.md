@@ -1,5 +1,5 @@
-<p align="center"> <H1> CityGML - UtilityNetwork ADE - Operation and Maintenance extension 
-<p align="left">Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
+# CityGML - UtilityNetwork ADE - Operation and Maintenance extension 
+Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
 
 ## Background
 
