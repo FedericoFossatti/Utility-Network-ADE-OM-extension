@@ -26,7 +26,7 @@ As a continuation to his work, I aim to:
 ## Contents of the repository
 
 This repository contains the following folders:
-1. [Raw data](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/01")"%20Raw%20Data) - Contains the utility network used for the validation of the data model
+1. [Raw data](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/01%29%20Raw%20Data) - Contains the utility network used for the validation of the data model
 2. [UML](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/02")"%20UML%20(Data%20model)) - Contains the Universal Markup Language diagram of the data model
 3. [ShapeChange](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/03")"%20ShapeChange%20(Transformation%20from%20UML%20to%20XSD)) - Contains the configuration file for deriving the .XSD schema from the UML diagrams
 4. [XSD](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/04")"%20XSD) - Contains the .XSD derived from UML using ShapeChange 
