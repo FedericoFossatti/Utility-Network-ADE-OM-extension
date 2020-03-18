@@ -26,14 +26,14 @@ As a continuation to his work, I aim to:
 ## Contents of the repository
 
 This repository contains the following folders:
-1. [Raw data](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/01)%20Raw%20Data) - Contains the utility network used for the validation of the data model
-2. [UML](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/02)%20UML%20(Data%20model)) - Contains the Universal Markup Language diagram of the data model
-3. [ShapeChange](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/03)%20ShapeChange%20(Transformation%20from%20UML%20to%20XSD)) - Contains the configuration file for deriving the .XSD schema from the UML diagrams
-4. [XSD](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/04)%20XSD) - Contains the .XSD derived from UML using ShapeChange 
-5. [SQL](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/05)%20SQL%20(Database%20set%20up%20files)) - Contains the database encoding of the UML data model (files to fully set up the O&M database)
-6. [FME](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/06)%20FME%20(Data%20transformation%20and%20loading%20workbench)) - Contains workspaces for manipulating spatial data
-7. [Python](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/07)%20Python%20(Loading%20dummy%20attributes)) - Contains routines to interact between Excel and the databse implementation in PostgreSQL
-8. [DB queries](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/08)%20DB%20Queries) - Contains several queries used to test the system
+1. [Raw data](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/01")"%20Raw%20Data) - Contains the utility network used for the validation of the data model
+2. [UML](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/02")"%20UML%20(Data%20model)) - Contains the Universal Markup Language diagram of the data model
+3. [ShapeChange](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/03")"%20ShapeChange%20(Transformation%20from%20UML%20to%20XSD)) - Contains the configuration file for deriving the .XSD schema from the UML diagrams
+4. [XSD](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/04")"%20XSD) - Contains the .XSD derived from UML using ShapeChange 
+5. [SQL](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/05")"%20SQL%20(Database%20set%20up%20files)) - Contains the database encoding of the UML data model (files to fully set up the O&M database)
+6. [FME](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/06")"%20FME%20(Data%20transformation%20and%20loading%20workbench)) - Contains workspaces for manipulating spatial data
+7. [Python](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/07")"%20Python%20(Loading%20dummy%20attributes)) - Contains routines to interact between Excel and the databse implementation in PostgreSQL
+8. [DB queries](https://github.com/FedericoFossatti/Utility-Network-ADE-OM-extension/tree/master/08")"%20DB%20Queries) - Contains several queries used to test the system
 
 
 ## Quickstart guide
