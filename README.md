@@ -65,7 +65,7 @@ This step is mandatory.
 3. Set up new database in PostgreSQL. ***It is preferrable to use lowercase for the DB name***. Open query tool in new database and excecute:  
      3.1. CREATE EXTENSION IF NOT EXISTS "postgis";  
      3.2. CREATE EXTENSION IF NOT EXISTS "postgis_raster";  
-     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; 
+     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
      3.4. CREATE EXTENSION IF NOT EXISTS "pgrouting";  
 4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
      4.1. Edit the batch file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
