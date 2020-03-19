@@ -63,22 +63,21 @@ This step is ***optional***: the O&M conceptual schema is ready, the ShapeChange
 ### B) O&M Database setup (PostgreSQL + PostGIS)
 This step is mandatory.  
 1. Download and install PostgreSQL
-2. Download and install PostGIS
-3. Set up new database in PostgreSQL. ***It is preferable to use lowercase for the DB name***. Open query tool in new database and execute:  
-     3.1. CREATE EXTENSION IF NOT EXISTS "postgis";  
-     3.2. CREATE EXTENSION IF NOT EXISTS "postgis_raster";  
-     3.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
-     3.4. CREATE EXTENSION IF NOT EXISTS "pgrouting";  
-4. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
+2. Set up new database in PostgreSQL. ***It is preferable to use lowercase for the DB name***. Open query tool in new database and execute:  
+     2.1. CREATE EXTENSION IF NOT EXISTS "postgis";  
+     2.2. CREATE EXTENSION IF NOT EXISTS "postgis_raster";  
+     2.3. CREATE EXTENSION IF NOT EXISTS "uuid-ossp";  
+     2.4. CREATE EXTENSION IF NOT EXISTS "pgrouting";  
+3. [Download 3D City DB v3.3.1](https://www.3dcitydb.org/3dcitydb/d3ddatabase/). Read installation guide of 3D City DB. Warning: The expanded database is only compatible with version v3.3.1, and not with the newest versions of 3DCityDB.  
      4.1. Edit the batch file: 'CREATE_DB.bat', located at C:\Program Files\3DCityDB-Importer-Exporter\V3.3\3dcitydb\postgresql and specify Host, Port, User, Password, Database and Bin.  
      4.2. Run batch file and when prompted enter the SRID and SRS name associated to the spatial data that will be input. 3D City DB installed.   
-5. [Download 3D City DB utilities package (optional)](https://github.com/gioagu/3dcitydb_utilities).   
+4. [Download 3D City DB utilities package (optional)](https://github.com/gioagu/3dcitydb_utilities).   
      5.1. Edit the batch file: 'CREATE_DB_citydb_utilities.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
      5.2. Run batch file. Utilities package installed.  
-6. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
-     6.1. Edit the batch file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
-     6.2. Run batch file. Metadata module installed.  
-7. Download O&M database configuration files, located in folder "05) Database" of this repository. Execute the files in sequential order from PostgreSQL, by copying and pasting into the query tool.  
+5. [Download 3D City DB metadata module](https://github.com/gioagu/3dcitydb_metadata_module).   
+     5.1. Edit the batch file: 'CREATE_DB_Metadata_module.bat', located at download directory and specify Host, Port, User, Password, Database and Bin.  
+     5.2. Run batch file. Metadata module installed.  
+6. Download O&M database configuration files, located in folder "05) Database" of this repository. You can either a) edit the batch file with you database configuration and let it install the database, or b)execute the files in sequential order from PostgreSQL, by copying and pasting into the query tool
 
  ***UtilityNetwork ADE - O&M extension database installation complete***
 
