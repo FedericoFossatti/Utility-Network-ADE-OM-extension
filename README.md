@@ -1,5 +1,5 @@
 # Operation & Maintenance extension of CityGML UtilityNetwork ADE  
-Master's thesis project at the University of Twente. Implementation and validation of the O&M extension of Utility Network ADE
+Master's thesis project at the University of Twente. Implementation and validation of the O&M Domain Ontology, a data model based on the Utility Network ADE
 
 ## Background
 
