@@ -1,5 +1,5 @@
-# Operation & Maintenance extension of CityGML UtilityNetwork ADE  
-Master's thesis project at the University of Twente. Implementation and validation of the O&M Domain Ontology, a data model based on the Utility Network ADE
+# Operation & Maintenance Domain Ontology. Improvement of CityGML UtilityNetwork ADE for Asset Management 
+Master's thesis project at the University of Twente. Implementation and testing of the O&M Domain Ontology, a data model based on the Utility Network ADE
 
 ## Background
 
@@ -104,6 +104,6 @@ This step is mandatory.
  ***UtilityNetwork ADE - O&M extension dummy attributes uploaded***
   
   ---
-### E) Querying database
+### E) Querying database (testing)
 
  Several queries are stored in a file in this repository that help explore the capabilities of the data model. The queries relate to a street reconstruction project and the information needs of an asset manager through the phases of such a project.
