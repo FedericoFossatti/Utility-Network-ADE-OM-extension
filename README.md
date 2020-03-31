@@ -1,12 +1,12 @@
-# Operation & Maintenance Domain Ontology. Improvement of CityGML UtilityNetwork ADE for Asset Management 
+# Operation & Maintenance Domain Ontology. Improvement of the Utility Network ADE of CityGML for Asset Management. 
 Master's thesis project at the University of Twente. Implementation and testing of the O&M Domain Ontology, a data model based on the Utility Network ADE
 
 ## Background
 
-The Operation & Maintenance Extension of UtilityNetwork ADE (an extension of CityGML) was developed by [Ramon ter Huurne](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance) to expand the original data model to cover concepts in the domain of O&M.  
+The Operation & Maintenance Domain Ontology based on the Utility Network ADE (which is, in turn, an extension of CityGML) was developed by [Ramon ter Huurne](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance) to improve the original data model to cover concepts in the domain of Operation & Maintenance and Asset Management.  
 
 As a continuation to his work, I aim to:  
-(a) Implement the data model in a spatial-relational database as was done by Giorgio Agugiaro for [Energy ADE](https://github.com/gioagu/3dcitydb_energy_ade) and [UtilityNetwork ADE](https://github.com/gioagu/3dcitydb_utility_network_ade).  
+(a) Implement the data model in a spatial-relational database as was done by Giorgio Agugiaro for [the Energy ADE](https://github.com/gioagu/3dcitydb_energy_ade) and [the Utility Network ADE](https://github.com/gioagu/3dcitydb_utility_network_ade).  
 (b) Populate the database with one utility network that previously needs to be transformed to become compliant with the O&M data model.  
 (c) Validate the usefulness  of the model for O&M via querying the database and visualizing the results in a GIS application.  
 
@@ -14,7 +14,7 @@ As a continuation to his work, I aim to:
 ## Resources & Related Work
 
 - [CityGML](https://www.opengeospatial.org/standards/citygml)  
-- [Tatjana Kutzner - UtilityNetwork ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
+- [Tatjana Kutzner - The Utility Network ADE](https://github.com/TatjanaKutzner/CityGML-UtilityNetwork-ADE#citygml-utilitynetwork-ade)
 - [Ramon ter Huurne - PDEng Project - O&M Conceptual Schema](https://github.com/RamonTerHuurne/UtilityNetwork-OperationsAndMaintenance)
 - [3D City DB v3.3.1 - The database implementation of CityGML](https://www.3dcitydb.org/3dcitydb/)
 - [Giorgio Agugiaro - Database Implementation of UN ADE 0.9.2](https://github.com/gioagu/3dcitydb_utility_network_ade)
