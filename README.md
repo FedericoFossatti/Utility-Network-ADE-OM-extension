@@ -1,5 +1,5 @@
-# Operation & Maintenance Domain Ontology. Improvement of the Utility Network ADE of CityGML for Asset Management. 
-Master's thesis project at the University of Twente. Implementation and testing of the O&M Domain Ontology, a data model based on the Utility Network ADE
+# Operation & Maintenance Domain Ontology data model. Database encoding, data transformation process and testing.   
+Master's thesis project at the University of Twente. Prototype implementation (database encoding + data transformation) and testing of the O&M Domain Ontology, a data model based on the Utility Network ADE
 
 ## Background
 
